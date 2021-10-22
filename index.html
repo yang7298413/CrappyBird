@@ -801,14 +801,14 @@
 					{
 					 hs = FB.score.coins;
 					 //setCookie("highscore", hs, 999);
-						await crappyBird.methods.setHighScore(hs).send({ from: userAccount });
+						await crappyBird.methods.setHighScore(studentId, hs).send({ from: userAccount });
 					}
 					return hs;
 				  }
 				  else
 				  {					 
 					//setCookie("highscore", FB.score.coins, 999);
-					  await crappyBird.methods.setHighScore(FB.score.coins).send({ from: userAccount });
+					  await crappyBird.methods.setHighScore(studentId, FB.score.coins).send({ from: userAccount });
 					return  FB.score.coins;
 				  }
 			}
@@ -861,6 +861,9 @@
 	<script>
 		var crappyBird;
 		var userAccount;
+		var studentId;
+		
+		var studentId = prompt("請輸入學號");
 
 		window.addEventListener('load', async () => {
 			// 检查web3是否已经注入到(Mist/MetaMask)
