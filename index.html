@@ -861,10 +861,7 @@
 	<script>
 		var crappyBird;
 		var userAccount;
-		var studentId;
 		
-		var studentId = prompt("請輸入學號");
-
 		window.addEventListener('load', async () => {
 			// 检查web3是否已经注入到(Mist/MetaMask)
 			if (window.ethereum) {
@@ -890,7 +887,8 @@
 		});
 
 		function startApp() {
-			var crappyBirdAddress = "0x0A8A5E4Db853C28696d021A07ff26E40254665A1";
+			
+			var crappyBirdAddress = "0x69F3109BcE2abD0DC5Df7fBe868d6135305cc2A8";
         		crappyBird = new web3js.eth.Contract(CrappyBirdABI, crappyBirdAddress);
 			userAccount = web3.currentProvider.selectedAddress;
 			console.log("userAccount = " + userAccount);
